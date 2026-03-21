@@ -70,17 +70,40 @@ pnpm preview
 
 ## 目录结构
 
-```text
-# TODO update this
+```ini
 .
 ├── .vitepress/                  # VitePress 核心配置
+│   ├── data/                    # 数据文件
+│   │   ├── coc-en.data.ts       # 英文版行为准则数据
+│   │   ├── coc-zh.data.ts       # 中文版行为准则数据
+│   │   ├── members-en.data.ts   # 英文版成员数据
+│   │   └── members-zh.data.ts   # 中文版成员数据
+│   ├── members.json             # 成员列表数据
 │   ├── theme/                   # 自定义主题样式与布局
-│   │   ├── style.css            # 全局样式与响应式调整
-│   │   └── Layout.vue           # 页面布局组件 (可选)
+│   │   ├── index.ts             # 主题入口文件
+│   │   └── style.css            # 全局样式与响应式调整
 │   └── config.mts               # 站点配置文件 (导航、侧边栏等)
+├── en/                          # 英文内容目录
+│   ├── about/                   # 关于我们 (英文)
+│   ├── members/                 # 成员介绍 (英文)
+│   ├── misc/                    # 其他内容 (英文)
+│   └── index.md                 # 英文首页
+├── zh/                          # 中文内容目录
+│   ├── about/                   # 关于我们 (中文)
+│   ├── members/                 # 成员介绍 (中文)
+│   ├── misc/                    # 其他内容 (中文)
+│   └── index.md                 # 中文首页
 ├── public/                      # 静态资源 (图片、Favicon、Email 跳转)
-├── index.md                     # 首页内容
+│   ├── go/                      # 跳转页面
+│   ├── favicon.svg              # 网站图标
+│   ├── _redirects               # 重定向配置
+│   ├── BingSiteAuth.xml         # Bing 站点验证
+│   ├── lang-redirect.js         # 语言重定向脚本
+│   └── robots.txt               # 爬虫配置
+├── index.md                     # 根首页
 ├── package.json                 # 项目依赖与脚本配置
+├── pnpm-lock.yaml               # 依赖锁定文件
+├── LICENSE                      # 许可证文件
 └── README.md                    # 项目说明文档
 ```
 
