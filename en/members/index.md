@@ -1,9 +1,9 @@
 # Members
 
-SiiWay Team now has 23 members (in order of joining):
+SiiWay Team now has 24 members (in order of joining):
 
 > [!WARNING]
-> Contents below are only available in Chinese, you may need a translator to view them.
+> Some contents below are only available in Chinese, you may need a translator to view them.
 
 - [xhc861](../../zh/members/xhc861)
 - [wyf9](../../zh/members/wyf9)
@@ -29,3 +29,4 @@ SiiWay Team now has 23 members (in order of joining):
 - [yuholt](../../zh/members/yuholt)
 - [RhenCloud](../../zh/members/RhenCloud)
 - [JosephLi](../../zh/members/JosephLi)
+- [mxdyeah](../../zh/members/mxdyeah)
