@@ -1,4 +1,4 @@
-import rawMembers from '../members.json';
+import rawMembers from "../members.json";
 let renderer: any = null;
 
 export default {
@@ -10,22 +10,22 @@ export default {
         config.srcDir,
         config.markdown,
         config.site.base,
-        config.logger
+        config.logger,
       );
     }
 
     const members = Object.entries(rawMembers).map(([key, value]) => {
-      if (key === 'nt-copy' || value === 'NtKrnl64') {
+      if (key === "nt-copy" || value === "NtKrnl64") {
         return `- *[${value}](./${key})*`;
       }
       return `- [${value}](./${key})`;
     });
-    const lst = members.join('\n');
+    const lst = members.join("\n");
     const len = members.length - 1;
 
     return {
       members: renderer.render(lst),
-      count: len
+      count: len,
     };
   },
 };

@@ -34,15 +34,32 @@
 .VPNavBar {
   background: var(--vp-c-bg) !important;
   /* border-bottom: 1px solid transparent !important; */
-  border-image: linear-gradient(90deg, transparent, rgba(65, 168, 223, 0.3), transparent) 1 !important;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 10px 15px -3px rgba(65, 168, 223, 0.05), 0 0 0 1px rgba(255, 255, 255, 0.5) inset !important;
+  border-image: linear-gradient(
+      90deg,
+      transparent,
+      rgba(65, 168, 223, 0.3),
+      transparent
+    )
+    1 !important;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.02),
+    0 10px 15px -3px rgba(65, 168, 223, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark .VPNavBar {
   background: var(--vp-c-bg) !important;
-  border-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent) 1 !important;
-  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05) inset !important;
+  border-image: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent
+    )
+    1 !important;
+  box-shadow:
+    0 10px 20px -5px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset !important;
 }
 
 /* 移动端全屏弹窗 */
@@ -111,13 +128,21 @@
 .VPHome::before {
   top: -200px;
   left: -200px;
-  background: radial-gradient(circle, rgba(58, 123, 213, 0.15) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(58, 123, 213, 0.15) 0%,
+    transparent 70%
+  );
 }
 
 .VPHome::after {
   bottom: -200px;
   right: -200px;
-  background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(0, 210, 255, 0.15) 0%,
+    transparent 70%
+  );
   animation-delay: -5s;
 }
 
@@ -138,7 +163,11 @@
   height: 80px;
   z-index: -2;
   pointer-events: none;
-  background: linear-gradient(90deg, rgba(99, 134, 171, 0.25), rgba(65, 168, 223, 0.25));
+  background: linear-gradient(
+    90deg,
+    rgba(99, 134, 171, 0.25),
+    rgba(65, 168, 223, 0.25)
+  );
   border-radius: 50px;
   overflow: hidden;
   box-shadow: 0 10px 30px -10px rgba(65, 168, 223, 0.2);
@@ -151,7 +180,13 @@
   left: 0;
   right: 0;
   height: 3px;
-  background-image: repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255, 255, 255, 0.95) 10px, rgba(255, 255, 255, 0.95) 20px);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.95) 10px,
+    rgba(255, 255, 255, 0.95) 20px
+  );
   background-size: 200% 100%;
   opacity: 0.9;
 }

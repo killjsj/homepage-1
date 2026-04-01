@@ -94,7 +94,11 @@ export default defineConfig({
           { icon: "wechat", ariaLabel: "Wechat", link: "https://wss.moe/wx" },
           { icon: "discord", ariaLabel: "Discord", link: "https://wss.moe/dc" },
           { icon: "github", ariaLabel: "GitHub", link: "https://wss.moe/gh" },
-          { icon: "telegram", ariaLabel: "Telegram 频道", link: "https://wss.moe/tgc" },
+          {
+            icon: "telegram",
+            ariaLabel: "Telegram 频道",
+            link: "https://wss.moe/tgc",
+          },
         ],
         editLink: {
           pattern: "https://github.com/siiway/homepage/edit/main/:path",
@@ -149,7 +153,11 @@ export default defineConfig({
         socialLinks: [
           { icon: "discord", ariaLabel: "Discord", link: "https://wss.moe/dc" },
           { icon: "github", ariaLabel: "GitHub", link: "https://wss.moe/gh" },
-          { icon: "telegram", ariaLabel: "Telegram Channel", link: "https://wss.moe/tgc" },
+          {
+            icon: "telegram",
+            ariaLabel: "Telegram Channel",
+            link: "https://wss.moe/tgc",
+          },
         ],
         editLink: {
           pattern: "https://github.com/siiway/homepage/edit/main/:path",
