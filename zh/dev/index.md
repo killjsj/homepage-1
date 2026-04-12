@@ -4,4 +4,5 @@
 
 - [Python 代码规范](./python-style)
 - [TypeScript 代码规范](./ts-style)
+- [Go 代码规范](./go-style)
 - [贡献指南](./contributing)

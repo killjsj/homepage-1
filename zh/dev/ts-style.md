@@ -12,9 +12,9 @@
 - 自动化优先，尽量通过工具而不是人工争论风格问题。
 - 本地与 CI 使用同一套检查标准。
 
-## 推荐工具链（偏新、偏激进）
+## 推荐工具链
 
-- Node.js: `22+`
+- Node.js: `24+`
 - 包管理: `bun 1.2+`
 - 代码检查: `ESLint`（Flat Config + typescript-eslint 严格规则）
 - 代码格式化: `Prettier`
