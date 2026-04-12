@@ -39,4 +39,5 @@
 ## 相关文档
 
 - [Python 代码规范](./python-style)
+- [TypeScript 代码规范](./ts-style)
 - [SiiWay 行为准则](../about/code-of-conduct)
