@@ -21,6 +21,13 @@
 - 测试：`pytest`
 - 提交前钩子：`pre-commit`
 
+### 推荐 VS Code 插件
+
+- Python `ms-python.python`
+- Pylance `ms-python.vscode-pylance`
+- ruff `charliermarsh.ruff`
+- ty `astral-sh.ty`
+
 ## 目录与命名建议
 
 - 包名、模块名使用小写加下划线，例如 `user_service.py`。
