@@ -8,6 +8,28 @@ const members = Object.entries(rawMembers).map(([key, value]) => {
   };
 });
 
+const zhSearchTranslations = {
+  button: {
+    buttonText: "搜索",
+    buttonAriaLabel: "搜索",
+  },
+  modal: {
+    displayDetails: "显示详细列表",
+    resetButtonTitle: "重置搜索",
+    backButtonTitle: "关闭搜索",
+    noResultsText: "没有结果",
+    footer: {
+      selectText: "选择",
+      selectKeyAriaLabel: "输入",
+      navigateText: "导航",
+      navigateUpKeyAriaLabel: "上箭头",
+      navigateDownKeyAriaLabel: "下箭头",
+      closeText: "关闭",
+      closeKeyAriaLabel: "Esc",
+    },
+  },
+};
+
 export default defineConfig({
   head: [
     ["link", { rel: "icon", href: "/favicon.svg" }],
@@ -17,6 +39,15 @@ export default defineConfig({
   lastUpdated: true,
   sitemap: {
     hostname: "https://siiway.org",
+  },
+
+  themeConfig: {
+    // 左侧侧边栏上方的图标
+    logo: "/favicon.svg",
+    // 搜索功能 https://vitepress.dev/zh/reference/default-theme-search
+    search: {
+      provider: "local",
+    },
   },
 
   locales: {
@@ -108,6 +139,24 @@ export default defineConfig({
         },
         lastUpdated: {
           text: "本页最后更新于",
+        },
+        // 将"On this page"改为中文
+        outline: {
+          label: '本页目录'
+        },
+        // 汉化了 "Previous page" 与 "Next page"。
+        docFooter: {
+          prev: "上一篇",
+          next: "下一篇",
+        },
+        search: {
+          options: {
+            locales: {
+              zh: {
+                translations: zhSearchTranslations,
+              },
+            },
+          },
         },
       },
     },
