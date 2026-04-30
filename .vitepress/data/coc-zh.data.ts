@@ -9,12 +9,12 @@ export default {
         config.srcDir,
         config.markdown,
         config.site.base,
-        config.logger
+        config.logger,
       );
     }
 
     const response = await fetch(
-      "https://raw.githubusercontent.com/siiway/.github/main/CODE_OF_CONDUCT.md"
+      "https://raw.githubusercontent.com/siiway/.github/main/CODE_OF_CONDUCT.md",
     );
 
     let raw: string;

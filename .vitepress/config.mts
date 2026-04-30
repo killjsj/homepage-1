@@ -1,22 +1,53 @@
 import { defineConfig } from "vitepress";
-import rawMembers from './members.json';
+import rawMembers from "./members.json";
 
 const members = Object.entries(rawMembers).map(([key, value]) => {
   return {
     text: value,
-    link: `/zh/members/${key}`
+    link: `/zh/members/${key}`,
   };
 });
+
+const zhSearchTranslations = {
+  button: {
+    buttonText: "搜索",
+    buttonAriaLabel: "搜索",
+  },
+  modal: {
+    displayDetails: "显示详细列表",
+    resetButtonTitle: "重置搜索",
+    backButtonTitle: "关闭搜索",
+    noResultsText: "没有结果",
+    footer: {
+      selectText: "选择",
+      selectKeyAriaLabel: "输入",
+      navigateText: "导航",
+      navigateUpKeyAriaLabel: "上箭头",
+      navigateDownKeyAriaLabel: "下箭头",
+      closeText: "关闭",
+      closeKeyAriaLabel: "Esc",
+    },
+  },
+};
 
 export default defineConfig({
   head: [
     ["link", { rel: "icon", href: "/favicon.svg" }],
-    ["script", { src: "/lang-redirect.js" }]
+    ["script", { src: "/lang-redirect.js" }],
   ],
 
   lastUpdated: true,
   sitemap: {
     hostname: "https://siiway.org",
+  },
+
+  themeConfig: {
+    // 左侧侧边栏上方的图标
+    logo: "/favicon.svg",
+    // 搜索功能 https://vitepress.dev/zh/reference/default-theme-search
+    search: {
+      provider: "local",
+    },
   },
 
   locales: {
@@ -25,7 +56,7 @@ export default defineConfig({
       label: "简体中文",
       lang: "zh",
       link: "/zh/",
-    
+
       title: "SiiWay 团队主页",
       description: "SiiWay 团队的官方网站",
 
@@ -34,6 +65,7 @@ export default defineConfig({
           { text: "主页", link: "/zh/" },
           { text: "成员", link: "/zh/members/" },
           { text: "联系", link: "/zh/about/contact" },
+          { text: "开发", link: "/zh/dev" },
         ],
         sidebar: [
           {
@@ -49,7 +81,17 @@ export default defineConfig({
               { text: "招新公告", link: "/zh/about/join" },
               { text: "规则 (QQ 群)", link: "/zh/about/rules-qq" },
               { text: "SiiWay 行为准则", link: "/zh/about/code-of-conduct" },
-              { text: "举报", link: "/zh/about/report" }
+              { text: "举报", link: "/zh/about/report" },
+            ],
+          },
+          {
+            text: "开发",
+            link: "/zh/dev/",
+            items: [
+              { text: "Python 代码规范", link: "/zh/dev/python-style" },
+              { text: "TypeScript 代码规范", link: "/zh/dev/ts-style" },
+              { text: "Go 代码规范", link: "/zh/dev/go-style" },
+              { text: "贡献指南", link: "/zh/dev/contributing" },
             ],
           },
           {
@@ -77,7 +119,7 @@ export default defineConfig({
           },
           {
             icon: {
-              svg: '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><g fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M17 29C21 29 25 26.9339 28 23.4065C36 14 41.4242 16.8166 44 17.9998C38.5 20.9998 40.5 29.6233 33 35.9998C28.382 39.9259 23.4945 41.014 19 41C12.5231 40.9799 6.86226 37.7637 4 35.4063V16.9998"/><path fill="currentColor" d="M5.64808 15.8669C5.02231 14.9567 3.77715 14.7261 2.86694 15.3519C1.95673 15.9777 1.72615 17.2228 2.35192 18.1331L5.64808 15.8669ZM36.0021 35.7309C36.958 35.1774 37.2843 33.9539 36.7309 32.9979C36.1774 32.042 34.9539 31.7157 33.9979 32.2691L36.0021 35.7309ZM2.35192 18.1331C5.2435 22.339 10.7992 28.144 16.8865 32.2239C19.9345 34.2667 23.217 35.946 26.449 36.7324C29.6946 37.522 33.0451 37.4428 36.0021 35.7309L33.9979 32.2691C32.2049 33.3072 29.9929 33.478 27.3947 32.8458C24.783 32.2103 21.9405 30.7958 19.1135 28.9011C13.4508 25.106 8.2565 19.661 5.64808 15.8669L2.35192 18.1331Z"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M33.5947 17C32.84 14.7027 30.8551 9.94054 27.5947 7H11.5947C15.2174 10.6757 23.0002 16 27.0002 24"/></g></svg>'
+              svg: '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><g fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M17 29C21 29 25 26.9339 28 23.4065C36 14 41.4242 16.8166 44 17.9998C38.5 20.9998 40.5 29.6233 33 35.9998C28.382 39.9259 23.4945 41.014 19 41C12.5231 40.9799 6.86226 37.7637 4 35.4063V16.9998"/><path fill="currentColor" d="M5.64808 15.8669C5.02231 14.9567 3.77715 14.7261 2.86694 15.3519C1.95673 15.9777 1.72615 17.2228 2.35192 18.1331L5.64808 15.8669ZM36.0021 35.7309C36.958 35.1774 37.2843 33.9539 36.7309 32.9979C36.1774 32.042 34.9539 31.7157 33.9979 32.2691L36.0021 35.7309ZM2.35192 18.1331C5.2435 22.339 10.7992 28.144 16.8865 32.2239C19.9345 34.2667 23.217 35.946 26.449 36.7324C29.6946 37.522 33.0451 37.4428 36.0021 35.7309L33.9979 32.2691C32.2049 33.3072 29.9929 33.478 27.3947 32.8458C24.783 32.2103 21.9405 30.7958 19.1135 28.9011C13.4508 25.106 8.2565 19.661 5.64808 15.8669L2.35192 18.1331Z"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M33.5947 17C32.84 14.7027 30.8551 9.94054 27.5947 7H11.5947C15.2174 10.6757 23.0002 16 27.0002 24"/></g></svg>',
             },
             ariaLabel: "飞书群组",
             link: "https://wss.moe/fs",
@@ -85,16 +127,38 @@ export default defineConfig({
           { icon: "wechat", ariaLabel: "Wechat", link: "https://wss.moe/wx" },
           { icon: "discord", ariaLabel: "Discord", link: "https://wss.moe/dc" },
           { icon: "github", ariaLabel: "GitHub", link: "https://wss.moe/gh" },
-          { icon: "telegram", ariaLabel: "Telegram 频道", link: "https://wss.moe/tgc" },
+          {
+            icon: "telegram",
+            ariaLabel: "Telegram 频道",
+            link: "https://wss.moe/tgc",
+          },
         ],
         editLink: {
           pattern: "https://github.com/siiway/homepage/edit/main/:path",
           text: "在 GitHub 上编辑本页",
         },
         lastUpdated: {
-          text: '本页最后更新于',
+          text: "本页最后更新于",
         },
-      }
+        // 将"On this page"改为中文
+        outline: {
+          label: '本页目录'
+        },
+        // 汉化了 "Previous page" 与 "Next page"。
+        docFooter: {
+          prev: "上一篇",
+          next: "下一篇",
+        },
+        search: {
+          options: {
+            locales: {
+              zh: {
+                translations: zhSearchTranslations,
+              },
+            },
+          },
+        },
+      },
     },
 
     // === 英文版 (en) ===
@@ -140,14 +204,18 @@ export default defineConfig({
         socialLinks: [
           { icon: "discord", ariaLabel: "Discord", link: "https://wss.moe/dc" },
           { icon: "github", ariaLabel: "GitHub", link: "https://wss.moe/gh" },
-          { icon: "telegram", ariaLabel: "Telegram Channel", link: "https://wss.moe/tgc" },
+          {
+            icon: "telegram",
+            ariaLabel: "Telegram Channel",
+            link: "https://wss.moe/tgc",
+          },
         ],
         editLink: {
           pattern: "https://github.com/siiway/homepage/edit/main/:path",
           text: "Edit this page on GitHub",
         },
         lastUpdated: {
-          text: 'Updated at',
+          text: "Updated at",
         },
       },
     },

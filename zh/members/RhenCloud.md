@@ -55,6 +55,12 @@ Minecraft 生电玩家。
 
 ## Projects
 
+### SiiWay CLI
+
+一个轻量级的命令行工具，用于基于远程模板注册项目。
+
+[GitHub](https://github.com/SiiWay/siiway-cli)
+
 ### ILP-Cpp
 
 模块化、支持多网站的小说下载器
